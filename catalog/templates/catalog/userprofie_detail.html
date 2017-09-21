@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>User: {{ userprofile.user.first_name }} {{ userprofile.user.last_name }}</h1>
+
+<p><strong>Introduction:</strong> {{ userprofile.introduction }}</p>
+<!-- Other fields that we should add in: contact information -->
+<p><strong>Service(s) offered:</strong>
+    {% for service in userprofile.services_offered.all %}
+    <li>
+        <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+        <a href="{{ service.get_absolute_url }}">{{ service.title }}</a>
+    {% if not forloop.last %},
+    {% endif %}{% endfor %}
+</p>
+
+{% endblock %}

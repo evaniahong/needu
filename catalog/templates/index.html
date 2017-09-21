@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+
+<section class="jumbotron text-center">
+<div class="container">
+  <h1 class="jumbotron-heading", style = "color: #cb6623;">Introducing NeedU</h1>
+  <p class="lead text-muted">Need something on campus? We got you. NeedU connects students with unique services to the UChicago community. Our community includes brilliant tutors, event photographers, and even dog sitters! Browse services or become a seller today!</p>
+  <p>
+    <a href="{% url 'services' %}" class="btn btn-primary">Find a service!</a>
+    <a href="https://form.jotform.com/70075931385156" class="btn btn-secondary">Provide a service!</a>
+  </p>
+</div>
+</section>
+
+<div class="album text-muted">
+<div class="container">
+    <h1>explore services</h1>
+
+  <div class="row">
+    <div class="card">
+      <a href="{% url 'services' %}">
+      <img data-src="holder.js/100px280/thumb" alt="Card image cap" class="img-thumbnail">
+      </a>
+      <p class="card-text">Laundry</p>
+    </div>
+    <div class="card">
+      <a href="{% url 'services' %}">
+      <img data-src="holder.js/100px280/thumb" alt="Card image cap" class="img-thumbnail">
+      </a>
+      <p class="card-text">Photography</p>
+    </div>
+    <div class="card">
+      <a href="{% url 'services' %}">
+      <img data-src="holder.js/100px280/thumb" alt="Card image cap" class="img-thumbnail">
+      </a>
+      <p class="card-text">Hair & Makeup</p>
+    </div>
+
+    <div class="card">
+      <a href="{% url 'services' %}">
+      <img data-src="holder.js/100px280/thumb" alt="Card image cap" class="img-thumbnail">
+      </a>
+      <p class="card-text">Tutoring</p>
+    </div>
+    <div class="card">
+      <a href="{% url 'services' %}">
+      <img data-src="holder.js/100px280/thumb" alt="Card image cap" class="img-thumbnail">
+      </a>
+      <p class="card-text">Plant Sitters</p>
+    </div>
+    <div class="card">
+      <a href="{% url 'services' %}">
+      <img data-src="holder.js/100px280/thumb" alt="Card image cap" class="img-thumbnail">
+      </a>
+      <p class="card-text">Music Teacher</p>
+    </div>
+
+    <div class="card">
+      <a href="{% url 'services' %}">
+      <img data-src="holder.js/100px280/thumb" alt="Card image cap" class="img-thumbnail">
+      </a>
+      <p class="card-text">Crafts & Handiwork</p>
+    </div>
+    <div class="card">
+      <a href="{% url 'services' %}">
+      <img data-src="holder.js/100px280/thumb" alt="Card image cap" class="img-thumbnail">
+      </a>
+      <p class="card-text">Cooking</p>
+    </div>
+    <div class="card">
+      <a href="{% url 'services' %}">
+      <img data-src="holder.js/100px280/thumb" alt="Card image cap" class="img-thumbnail">
+      </a>
+      <p class="card-text">Browse all</p>
+    </div>
+  </div>
+
+</div>
+</div>
+
+{% endblock %}

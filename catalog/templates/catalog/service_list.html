@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<section class="jumbotron text-center">
+<div class="container">
+  <h1 class="jumbotron-heading", style = "color: #cb6623;">Find the service you need...</h1>
+  <p class="lead text-muted">From tutors to photographers to dogsitters and more!</p>
+</div>
+</section>
+
+<div class="album text-muted">
+    <div class="container">
+        <h1>all services</h1>
+        {% if service_list %}
+        <div class="row">
+            {% for service in service_list %}
+            <div class="card">
+                <a href="{{ service.get_absolute_url }}">
+                <img data-src="http://mydomain.com/foo.jpg" alt = "thumb" class="img-thumbnail">
+                </a>
+                <p class="card-text">{{ service.title }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>There are no services offered.</p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

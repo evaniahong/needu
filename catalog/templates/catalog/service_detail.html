@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+<section class="jumbotron text-center">
+<div class="container">
+  <h1 class="jumbotron-heading", style = "color: #cb6623;">{{ service.title }}</h1>
+  <p class="lead text-muted">brought to you by: {{ service.provider }}</p>
+</div>
+</section>
+
+<dl>
+    <dt>Our service:</dt>
+    <dd>{{ service.summary }}</dd>
+</dl>
+
+<p><strong>Cost:</strong> {{ service.cost }}</p>
+<p><strong>Availability:</strong> {{ service.availability }}</p>
+<p><strong>Contact:</strong> {{ service.contact }} </p>
+<p><strong>Category:</strong> {% for category in service.category.all %} {{ category }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+
+{% endblock %}

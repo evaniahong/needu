@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+<p>
+    Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.
+</p>
+    {% else %}
+<p>Please login to see this page.</p>
+    {% endif %}
+{% endif %}
+<!--
+<form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+
+    <div>
+        <td>{{ form.username.label_tag }}</td>
+        <td>{{ form.username }}</td>
+    </div>
+    <div>
+        <td>{{ form.password.label_tag }}</td>
+        <td>{{ form.password }}</td>
+    </div>
+
+    <div>
+        <input type="submit" value="login" />
+        <input type="hidden" name="next" value="" />
+    </div>
+</form>
+
+{# Assumes you setup the password_reset view in your URLconf #}
+<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+
+<br>
+<p><strong>-- OR --</strong></p>
+-->
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '171497356739864',
+      cookie     : true,
+      xfbml      : true,
+      version    : '{v2.10}'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+
+
+
+{% endblock %}
